@@ -5,7 +5,7 @@
 # COSC 1010
 #
 # Initialize variables for bugs and total number of bugs collected.
-bugs_Collected = 0 # Stores the number of bugs colleged in each day
+bugs_Collected = 0 # Stores the number of bugs collected in each day
 total_Bugs = 0 # Stores the total number of bugs collected over 7 days
 
 # Number of days the bug collector collects bugs.
