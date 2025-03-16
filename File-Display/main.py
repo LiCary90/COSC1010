@@ -7,7 +7,7 @@
 # Use comments liberally throughout the program. 
 
 # Define a constant for the file name
-FILE_NAME = "numbers.txt"     # This is the file that contains the numbers
+FILE_NAME = "File-Display/numbers.txt"     # This is the file that contains the numbers
 
 # Main fuction to red and display numbers from the file
 def main():
