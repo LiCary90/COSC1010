@@ -7,7 +7,7 @@
 # Use comments liberally throughout the program. 
 
 # Constants for the file name
-FILE_NAME = "numbers.txt"
+FILE_NAME = 'Magic-8-ball/8_ball_responses.txt'
 
 # Variables
 total = 0   # Keeps track fo the sum of numbers
