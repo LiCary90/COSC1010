@@ -6,9 +6,9 @@
 #
 # Use comments liberally throughout the program. 
 
-# Part 1
+# Part 2
 
-# Dictionary to map letters to symbols
+# Original encryption dictionary
 CODE = {'A': '%', 'a': '9',
     'B': '@', 'b': '#',
     'C': '&', 'c': '1',
@@ -37,32 +37,31 @@ CODE = {'A': '%', 'a': '9',
     'Z': 'j', 'z': 'k',
     ' ': ' '}
 
-def main():
-    # Ask for the input file name
-    input_name = input('Enter the name of the input file: ')
+# Reverse the CODE dictionary for decryption
+REVERSE_CODE = {v: k for k, v in CODE.items()}
+
+def decrypt_file():
+    # Ask for the input encrypted file name
+    input_name = input('Enter the name of the encrypted file: ')
 
     try:
         with open(input_name, 'r') as input_file:
-            text = input_file.read()
+            encrypted_text = input_file.read()
     except FileNotFoundError:
         print(f"Error: The file '{input_name}' was not found.")
         return
 
-    # Convert the text
-    result = ''
-    for ch in text:
-        if ch in CODE:
-            result += CODE[ch]
+    # Decrypt the text
+    decrypted_text = ''
+    for ch in encrypted_text:
+        if ch in REVERSE_CODE:
+            decrypted_text += REVERSE_CODE[ch]
         else:
-            result += ch  # Keep any characters not in the CODE dictionary as they are
+            decrypted_text += ch  # Leave any unknown characters unchanged
 
-    # Ask for the output file name
-    output_name = input('Enter the name of the output file: ')
+    # Display the decrypted text
+    print("\nDecrypted Text:\n")
+    print(decrypted_text)
 
-    with open(output_name, 'w') as output_file:
-        output_file.write(result)
-
-    print(f"Encryption complete! Encrypted text written to '{output_name}'.")
-
-# Call the main function
-main()
+# Call the function
+decrypt_file()
